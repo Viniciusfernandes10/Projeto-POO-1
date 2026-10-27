@@ -1,0 +1,35 @@
+/* Tabela de alunos */
+#alunos table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  
+  /* Cabeçalho */
+  #alunos th {
+    background-color: #f1f3f5;
+    color: #333;
+    padding: 14px 12px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  
+  /* Células dos alunos */
+  #alunos td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #333;
+  }
+  
+  
+  /* Efeito ao passar o mouse */
+  #alunos tr:hover td {
+    background-color: #f8f9fa;
+  }
+  
+  
+  /* Alinhamento da média */
+  
