@@ -7,20 +7,20 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
-
-
-/* Container dos botões das abas */
-.tabs-container {
+ }
+ 
+ 
+ /* Container dos botões das abas */
+ .tabs-container {
   display: flex;
   gap: 5px;
   border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
-}
-
-
-/* Estilo dos botões das abas */
-.tab-button {
+ }
+ 
+ 
+ /* Estilo dos botões das abas */
+ .tab-button {
   flex: 1;
   padding: 10px;
   background-color: #f0f0f0;
@@ -30,51 +30,51 @@ body {
   font-size: 14px;
   border-radius: 4px 4px 0 0;
   transition: background-color 0.2s;
-}
-
-
-/* Visual do botão da aba que está selecionada */
-.tab-button.active {
+ }
+ 
+ 
+ /* Visual do botão da aba que está selecionada */
+ .tab-button.active {
   background-color: #007bff;
   color: white;
   border-color: #007bff;
   font-weight: bold;
-}
-
-
-/* Regra principal das abas: Esconde por padrão */
-.tab-content {
-  display: none; 
+ }
+ 
+ 
+ /* Regra principal das abas: Esconde por padrão */
+ .tab-content {
+  display: none;
   flex-direction: column;
   gap: 12px;
-}
-
-
-/* Mostra apenas a aba que tiver a classe 'active' */
-.tab-content.active {
-  display: flex; 
-}
-
-
-/* Estilo dos inputs (mantido da etapa anterior) */
-input {
+ }
+ 
+ 
+ /* Mostra apenas a aba que tiver a classe 'active' */
+ .tab-content.active {
+  display: flex;
+ }
+ 
+ 
+ /* Estilo dos inputs (mantido da etapa anterior) */
+ input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
-}
-
-
-input:focus {
+ }
+ 
+ 
+ input:focus {
   outline: none;
   border-color: #007bff;
-}
-
-
-/* Botão simples para salvar o cadastro */
-.btn-salvar {
+ }
+ 
+ 
+ /* Botão simples para salvar o cadastro */
+ .btn-salvar {
   padding: 10px;
   background-color: #28a745;
   color: white;
@@ -82,18 +82,19 @@ input:focus {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-}
-
-
-/* Estilo simples para a lista de alunos */
-.lista-alunos {
+ }
+ 
+ 
+ /* Estilo simples para a lista de alunos */
+ .lista-alunos {
   list-style: none;
   padding: 0;
-}
-
-
-.lista-alunos li {
+ }
+ 
+ 
+ .lista-alunos li {
   padding: 8px;
   border-bottom: 1px solid #eee;
   font-size: 14px;
-}
+ }
+ 
