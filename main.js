@@ -1,7 +1,7 @@
 // main.js = fachada: guarda os dados e chama a Interface
 let turmas = [];
 
-// ----- Turmas -----
+// Turmas 
 function cadastroTurma() {
   Interface.abrirTurma(turmas);
 }
@@ -14,7 +14,7 @@ function btnSalvarTurma() {
   }
 }
 
-// ----- Alunos -----
+// Alunos 
 function cadastroAluno() {
   Interface.abrirCadastro(turmas);
 }
@@ -35,7 +35,7 @@ function listarAluno() {
   Interface.listar(turmas);
 }
 
-// ----- Edição das notas (tela de exibição dos alunos) -----
+// Edição das notas (tela de exibição dos alunos)
 function editarAluno(t, a) {
   Interface.iniciarEdicao(turmas, t, a);
 }

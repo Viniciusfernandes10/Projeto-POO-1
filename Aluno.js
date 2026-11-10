@@ -16,7 +16,7 @@ class Aluno {
     this.gerarEstado();
   }
 
-  // Nota válida: número de 0 a 10, com no máximo 1 casa decimal (regra da UFRN)
+  // Nota válida: número de 0 a 10, com no máximo 1 casa decimal
   static notaValida(valor) {
     if (typeof valor !== 'number' || isNaN(valor)) {
       return false;
@@ -31,7 +31,7 @@ class Aluno {
     return true;
   }
 
-  // ---------- GETS e SETS das notas ----------
+  // GETS e SETS das notas 
   getNota1() {
     return this.#nota1;
   }
@@ -68,20 +68,19 @@ class Aluno {
     return true;
   }
 
-  // ---------- média e situação ----------
+  // média e situação 
   gerarMedia() {
     this.#media = (this.#nota1 + this.#nota2 + this.#nota3) / 3;
     return this.#media;
   }
 
-  // Critério da UFRN (Resolução 035/2025-CONSEPE, arts. 100 a 103):
   //  Aprovado    -> média >= 6,0 E nota >= 4,0 em TODAS as unidades
   //  Recuperação -> não aprovou por média, mas média >= 3,0
   //  Reprovado   -> média < 3,0
   gerarEstado() {
     let est;
 
-    // corta "sujeira" do ponto flutuante (ex.: 0.1 + 8.2 + 0.7 dá 8.999999999999998 e não 9)
+    // Ponto flutuante 
     let media = Math.round(this.#media * 1000000) / 1000000;
 
     // menor das 3 notas
@@ -112,7 +111,7 @@ class Aluno {
     return this.#estado;
   }
 
-  // ---------- nome ----------
+  // nome 
   getNome() {
     return this.#nome;
   }

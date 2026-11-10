@@ -25,7 +25,7 @@ class Turma {
       return this.#alunos.length;
     }
   
-    // devolve o aluno da posição i (0, 1, 2...)
+    // devolve o aluno da posição i 
     getAluno(i) {
       return this.#alunos[i];
     }

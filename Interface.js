@@ -1,8 +1,8 @@
 class Interface {
-  // guarda qual aluno está com as notas em edição: { t: índice da turma, a: índice do aluno }
+  // guarda qual aluno está com as notas em edição
   static #editando = null;
 
-  // ---------- utilitários ----------
+  // utilitários 
 
   // evita que um nome com < ou > quebre a página (HTML injetado)
   static escapar(texto) {
@@ -14,7 +14,7 @@ class Interface {
       .replace(/'/g, '&#39;');
   }
 
-  // lê uma nota digitada; aceita vírgula (7,5) ou ponto (7.5)
+  // lê uma nota digitada
   static lerNota(id) {
     let texto = document.getElementById(id).value.trim().replace(',', '.');
     if (texto === '') {
@@ -53,7 +53,7 @@ class Interface {
     return Interface.escapar(turma.getCurso()) + ' — Prof. ' + Interface.escapar(turma.getProfessor());
   }
 
-  // ---------- aba TURMAS ----------
+  // aba TURMAS
 
   static abrirTurma(turmas) {
     Interface.mostrarAba('turma');
@@ -92,7 +92,7 @@ class Interface {
     document.getElementById('lista-turmas').innerHTML = html;
   }
 
-  // ---------- aba CADASTRAR ALUNO ----------
+  // aba CADASTRAR ALUNO 
 
   static abrirCadastro(turmas) {
     Interface.mostrarAba('cadastrar');
@@ -122,7 +122,7 @@ class Interface {
     }
   }
 
-  // lê o formulário; devolve { indiceTurma, aluno } ou null se algo estiver errado
+  // lê o formulário
   static salvarAluno() {
     let indice = document.getElementById('turma-aluno').value;
     let nome = document.getElementById('nome').value.trim();
@@ -155,7 +155,7 @@ class Interface {
     return { indiceTurma: Number(indice), aluno: aluno };
   }
 
-  // ---------- aba LISTAR ALUNOS (com edição das notas) ----------
+  // aba LISTAR ALUNOS (com edição das notas)
 
   static listar(turmas) {
     Interface.mostrarAba('listar');
@@ -228,7 +228,7 @@ class Interface {
     Interface.listar(turmas);
   }
 
-  // valida as 3 notas e só então altera (via set); se alguma for inválida, não muda nenhuma
+  // valida as 3 notas e só então altera (via set)
   static salvarEdicao(turmas, t, a) {
     let n1 = Interface.lerNota('edit-n1');
     let n2 = Interface.lerNota('edit-n2');
