@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- <head>
-   <meta charset="UTF-8" />
-   <link rel="stylesheet" href="./styles.css" />
-   <link rel="stylesheet" href="./tabStyle.css" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <script src="Aluno.js" defer></script>
-   <script src="Interface.js" defer></script>
-   <script src="main.js" defer></script>
-   <title>Sistema Escolar</title>
- </head>
- <body>
-   <!-- Botões para trocar de aba -->
-   <div class="tabs-container">
-     <button class="tab-button active" id="btn-cadastrar" onclick="Interface.cadastrar()">Cadastrar</button>
-     <button class="tab-button" id="btn-listar" onclick="listarAluno()">
-       Listar Alunos
-     </button>
-   </div>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./tabStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="Aluno.js" defer></script>
+    <script src="Turma.js" defer></script>
+    <script src="Interface.js" defer></script>
+    <script src="main.js" defer></script>
+    <title>Sistema Escolar</title>
+  </head>
+  <body>
+    <!-- Botões para trocar de aba -->
+    <div class="tabs-container">
+      <button class="tab-button active" id="btn-turma" onclick="cadastroTurma()">Turmas</button>
+      <button class="tab-button" id="btn-cadastrar" onclick="cadastroAluno()">Cadastrar Aluno</button>
+      <button class="tab-button" id="btn-listar" onclick="listarAluno()">Listar Alunos</button>
+    </div>
 
+    <!-- Aba 1: Turmas -->
+    <div id="tab-turma" class="tab-content active">
+      <div class="formulario">
+        <label>Professor: <input id="professor" type="text" /></label>
+        <label>Nome do curso: <input id="curso" type="text" /></label>
+        <button onclick="btnSalvarTurma()" class="btn-salvar">Salvar Turma</button>
+      </div>
+      <h3>Turmas cadastradas</h3>
+      <ul class="lista-alunos" id="lista-turmas">
+        <li>Nenhuma turma cadastrada ainda.</li>
+      </ul>
+    </div>
 
-   <!-- Conteúdo da Aba 1: Cadastrar -->
-   <div id="tab-cadastrar" class="tab-content active">
-     Nome: <input id="nome" type="text" /> Nota 1:
-     <input id="n1" type="text" /> Nota 2: <input id="n2" type="text" /> Nota
-     3: <input id="n3" type="text" />
-     <button onclick="btnSalvar()" class="btn-salvar">Salvar Aluno</button>
-   </div>
+    <!-- Aba 2: Cadastrar Aluno (só funciona se existir turma) -->
+    <div id="tab-cadastrar" class="tab-content">
+      <p id="aviso-sem-turma" class="aviso">
+        Cadastre uma turma antes de cadastrar alunos (aba "Turmas").
+      </p>
+      <div id="form-aluno" class="formulario" hidden>
+        <label>Turma: <select id="turma-aluno"></select></label>
+        <label>Nome: <input id="nome" type="text" /></label>
+        <label>Nota 1: <input id="n1" type="text" inputmode="decimal" /></label>
+        <label>Nota 2: <input id="n2" type="text" inputmode="decimal" /></label>
+        <label>Nota 3: <input id="n3" type="text" inputmode="decimal" /></label>
+        <button onclick="btnSalvar()" class="btn-salvar">Salvar Aluno</button>
+      </div>
+    </div>
 
-
-   <!-- Conteúdo da Aba 2: Listar -->
-   <div id="tab-listar" class="tab-content">
-     <h3>Alunos Cadastrados</h3>
-     <ul class="lista-alunos" id="alunos">
-       <!-- O JavaScript vai colocar os alunos aqui depois -->
-       <li>Nenhum aluno cadastrado ainda.</li>
-     </ul>
-   </div>
- </body>
+    <!-- Aba 3: Listar Alunos (com edição das notas) -->
+    <div id="tab-listar" class="tab-content">
+      <h3>Alunos Cadastrados</h3>
+      <div id="alunos">
+        <p>Nenhum aluno cadastrado ainda.</p>
+      </div>
+    </div>
+  </body>
 </html>
